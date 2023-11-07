@@ -108,8 +108,8 @@ void Arguments::GetGridSize() {
 		}
 		height = (x_max - x_min) + 1;
 		width = (y_max - y_min) + 1;
-		padding_width = 0 - y_min;
-		padding_height = 0 - x_min;
+		padding_width = (0 - y_min == 0) ? 0 : 0 - y_min + 1;
+		padding_height = (0 - x_min == 0) ? 0 : 0 - x_min + 1;
 	}
 }
 
@@ -117,7 +117,7 @@ void Arguments::GetArguments(int argc, char* argv[]) {
 	for (int i = 1; i < argc; ++i) {
 		GetMaxIterArgument(argc, argv, i);
 		GetFreqArgument(argc, argv, i);
-		GetFilenameOfTVS(argc, argv, i);
+		GetFilename(argc, argv, i);
 		GetOutputPath(argc, argv, i);
 		GetGridSize();
 	}
