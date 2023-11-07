@@ -18,8 +18,7 @@ void Arguments::GetMaxIterArgument(int argc, char* argv[], int& iterator) {
 			PrintError("The -m and --max-iterator arguments require correctly entered arguments");
 		}
 		max_iter = result;
-	}
-	else if (!strncmp(argv[iterator], long_argument, kLenMaxIter)) {
+	} else if (!strncmp(argv[iterator], long_argument, kLenMaxIter)) {
 		result = _strtoi64(argv[iterator] + kLenMaxIter, &pEnd, 10);
 		if (argv[iterator] + kLenMaxIter == pEnd || range_error) {
 			PrintError("The -m and --max-iterator arguments require correctly entered arguments");
@@ -41,8 +40,7 @@ void Arguments::GetFreqArgument(int argc, char* argv[], int& iterator) {
 			PrintError("The -f and --freq arguments require correctly entered arguments");
 		}
 		freq = result;
-	}
-	else if (!strncmp(argv[iterator], long_argument, kLenFreq)) {
+	} else if (!strncmp(argv[iterator], long_argument, kLenFreq)) {
 		result = strtol(argv[iterator] + kLenFreq, &pEnd, 10);
 		if (argv[iterator] + kLenFreq == pEnd || range_error) {
 			PrintError("The -f and --freq arguments require correctly entered arguments");
@@ -61,8 +59,7 @@ void Arguments::GetFilename(int argc, char* argv[], int& iterator) {
 		}
 		filename = argv[iterator + 1];
 		++iterator;
-	}
-	else if (!strncmp(argv[iterator], long_argument, kLenFilename)) {
+	} else if (!strncmp(argv[iterator], long_argument, kLenFilename)) {
 		if (argv[iterator] + kLenFilename == pEnd) {
 			PrintError("The -i and --input arguments require correctly entered arguments");
 		}
@@ -80,8 +77,7 @@ void Arguments::GetOutputPath(int argc, char* argv[], int& iterator) {
 		}
 		output_path = argv[iterator + 1];
 		++iterator;
-	}
-	else if (!strncmp(argv[iterator], long_argument, kLenOutputPath)) {
+	} else if (!strncmp(argv[iterator], long_argument, kLenOutputPath)) {
 		if (argv[iterator] + kLenOutputPath == pEnd) {
 			PrintError("The -o and --output arguments are not provided with data");
 		}

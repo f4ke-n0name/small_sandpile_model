@@ -128,16 +128,13 @@ void ToImage(uint64_t**& grid, const std::string& output_path, uint16_t width, u
             if (coord_y + 1 >= width) {
                 first_color = grid[coord_x][coord_y];
                 second_color = 0;
-            }
-            else if (coord_y >= width) {
+            } else if (coord_y >= width) {
                 first_color = 0;
                 second_color = 0;
-            }
-            else {
+            } else {
                 first_color = grid[coord_x][coord_y];
                 second_color = grid[coord_x][coord_y + 1];
             }
-
             if (first_color >= 4) {
                 first_color = 4;
             }
